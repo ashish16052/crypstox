@@ -56,19 +56,22 @@ a {
 }
 
 .Navbtns{
-    width: 150px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .Navbtns .Button{
     width: 80px;
     padding: 5px;
     font-size: 13px;
+    margin: 0 20px;
 }
 
-
+.Navuser{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .ThemeBtn-checkbox {
     display: none;
@@ -137,6 +140,36 @@ a {
 .Home .illustration {
     height: 100%;
     margin-right: 60px;
+}
+
+.Dashboard{
+    padding: 10px 4vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.List{
+    height: 500px;
+    width: 20vw;
+    overflow-y: scroll;
+}
+
+.List::-webkit-scrollbar {
+    display: none;
+}
+
+.Coinrow{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--font2);
+    border-top: 1px solid var(--font2);
+    padding: 0 10px;
+}
+
+.Coinrow img{
+    height: 30px;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,10 +1,28 @@
-import React from 'react'
-import { Navigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import List from '../components/List';
+import Graph from '../components/Graph';
+import { Route, Routes, Link, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { SingleCoin } from '../components/api';
+import axios from 'axios';
 
 const Dashboard = () => {
+
+  var { id } = useParams();
+
+  const [coin, setCoin] = useState("");
+  const fetchData = async () => {
+    const { data } = await axios.get(SingleCoin(id));
+    setCoin(data);
+  }
+  useEffect(() => {
+    fetchData();
+  }, [id])
+
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className='Dashboard'>
+      <List />
+      <Graph coin={coin} />
     </div>
   );
 }
