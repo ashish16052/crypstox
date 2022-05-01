@@ -55,19 +55,19 @@ a {
     padding: 10px 4vw;
 }
 
-.Navbtns{
+.Navbtns {
     display: flex;
     align-items: center;
 }
 
-.Navbtns .Button{
+.Navbtns .Button {
     width: 80px;
     padding: 5px;
     font-size: 13px;
     margin: 0 20px;
 }
 
-.Navuser{
+.Navuser {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -142,13 +142,13 @@ a {
     margin-right: 60px;
 }
 
-.Dashboard{
+.Dashboard {
     padding: 10px 4vw;
     display: flex;
     justify-content: space-between;
 }
 
-.List{
+.List {
     height: 500px;
     width: 20vw;
     overflow-y: scroll;
@@ -158,7 +158,7 @@ a {
     display: none;
 }
 
-.Coinrow{
+.Coinrow {
     height: 50px;
     display: flex;
     align-items: center;
@@ -168,13 +168,52 @@ a {
     padding: 0 10px;
 }
 
-.Coinrow img{
+.Coinrow img {
     height: 30px;
+}
+
+.Graph {
+    width: 800px;
+}
+
+.CoinInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding:10px 0;
+}
+
+.FilterButton{
+    display: flex;
+}
+
+.ChartButton{
+    background-color: var(--accent);
+    color: var(--font);
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    margin: 0 10px;
+}
+
+.Coinname {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Coinname img {
+    margin-right: 20px;
 }
 
 @media only screen and (max-width: 768px) {
 
-    .Home{
+    .Home {
         justify-content: center;
     }
 
