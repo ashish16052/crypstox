@@ -4,26 +4,13 @@
     box-sizing: border-box;
 }
 
-/* :root {
-    --bg1: #08041C;
-    --bg2: #13132C;
-    --font: #B3B2C8;
-    --accent: #464752;
-}
-
-[data-theme="light"] {
-    --bg1: #FAFCFF;
-    --bg2: #E8EBF5;
-    --font: #3B3B48;
-    --accent: #464752;
-} */
-
 :root {
     --bg1: #08041C;
     --bg2: #FAFCFF;
     --font1: #B3B2C8;
     --font2: #3B3B48;
-    --accent: #464752;
+    --accent: #4F2ED0;
+    --font: #FAFCFF;
 }
 
 [data-theme="light"] {
@@ -31,7 +18,8 @@
     --bg2: #08041C;
     --font1: #3B3B48;
     --font2: #B3B2C8;
-    --accent: #464752;
+    --accent: #08041C;
+    --font: #FAFCFF;
 }
 
 body {
@@ -44,15 +32,43 @@ a {
     color: var(--comp);
 }
 
-.Nav{
+.Button {
+    background-color: var(--accent);
+    color: var(--font);
+    width: 120px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+.Nav {
     background: var(--bg1);
     color: var(--font1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 4vw;
 }
+
+.Navbtns{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Navbtns .Button{
+    width: 80px;
+    padding: 5px;
+    font-size: 13px;
+}
+
+
 
 .ThemeBtn-checkbox {
     display: none;
@@ -93,20 +109,61 @@ a {
     width: 20px;
 }
 
-.Home{
-    padding: 10px 20px;
+.Home {
+    padding: 10px 4vw;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 40vh;
+    height: 80vh;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.Home .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+}
+
+.Home .content h1 {
+    font-size: 50px;
+}
+
+.Home .content p {
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.Home .illustration {
+    height: 100%;
+    margin-right: 60px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .Home{
+        justify-content: center;
+    }
+
+    .Home .illustration {
+        margin-right: 0px;
+    }
+
+    .Home .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .Footer {
-    position: absolute;
-    background: var(--bg2);
-    color: var(--font2);
+    position: fixed;
+    background: var(--accent);
+    color: var(--font);
     width: 100vw;
     bottom: 0;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
 }

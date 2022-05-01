@@ -7,17 +7,20 @@ const Logout = (props) => {
     const navigate = useNavigate();
 
     const logoutSuccess = () => {
-        alert("logged out");
         localStorage.removeItem("user");
         props.setSigned(false);
         navigate("/");
     }
 
     return (
-        <div>
+        <div className="Logout">
             <GoogleLogout
                 clientId={process.env.REACT_APP_ClientID}
-                buttonText="Logout"
+                render={renderProps => (
+                    <button className="Button" onClick={renderProps.onClick} disabled={renderProps.disabled}>Sign out</button>
+
+                )}
+                buttonText="Signout"
                 onLogoutSuccess={logoutSuccess}
             >
             </GoogleLogout>

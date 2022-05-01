@@ -4,8 +4,6 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
-import Login from './components/Login';
-import Logout from './components/Logout';
 import { useState } from 'react';
 
 function App() {
@@ -14,18 +12,14 @@ function App() {
 
   return (
     <div>
-      <Nav />
+      <Nav setSigned={setSigned} isSigned={isSigned}/>
       {/* <Link to="/">Home</Link>
       <Link to="/dashboard">Dashboard</Link> */}
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route exact path='/' element={<Home setSigned={setSigned} isSigned={isSigned} />} />
         <Route path='/dashboard'
           element={isSigned ? <Dashboard /> : <Navigate to="/" />} />
       </Routes>
-      {/* {
-        isSigned ?
-          <Logout setSigned={setSigned} /> : <Login setSigned={setSigned} />
-      } */}
       <Footer />
     </div>
   );
