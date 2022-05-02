@@ -5,21 +5,25 @@
 }
 
 :root {
-    --bg1: #08041C;
+    --bg1: #191927;
     --bg2: #FAFCFF;
+    --bg3: #191D32;
     --font1: #B3B2C8;
     --font2: #3B3B48;
     --accent: #4F2ED0;
     --font: #FAFCFF;
+    --shadow: 0px 0px 2px #4e2ed093;
 }
 
 [data-theme="light"] {
-    --bg1: #FAFCFF;
-    --bg2: #08041C;
+    --bg1: #f5f5ff;
+    --bg2: #191927;
+    --bg3: #FAFCFF;
     --font1: #3B3B48;
     --font2: #B3B2C8;
-    --accent: #08041C;
+    --accent: #191927;
     --font: #FAFCFF;
+    --shadow: 0px 1px 4px rgba(0, 0, 0, 0.194);
 }
 
 body {
@@ -44,6 +48,10 @@ a {
     font-size: 15px;
 }
 
+.Button:hover {
+    background-color: var(--font1);
+}
+
 
 .Nav {
     background: var(--bg1);
@@ -53,6 +61,7 @@ a {
     align-items: center;
     width: 100%;
     padding: 10px 4vw;
+    box-shadow: var(--shadow);
 }
 
 .Navbtns {
@@ -71,6 +80,12 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.avatar {
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
 }
 
 .ThemeBtn-checkbox {
@@ -129,6 +144,42 @@ a {
 }
 
 .Home .content h1 {
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fade-up 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.Home .content p {
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fade-up 2s ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.Home .content .Button {
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fade-up 2s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes fade-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.Home .content h1 {
     font-size: 50px;
 }
 
@@ -146,12 +197,19 @@ a {
     padding: 10px 4vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    min-height: 84vh;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
 .List {
-    height: 500px;
-    width: 20vw;
+    height: 450px;
+    width: 25vw;
     overflow-y: scroll;
+    box-shadow: var(--shadow);
+    background-color: var(--bg3);
+    border-radius: 10px;
 }
 
 .List::-webkit-scrollbar {
@@ -162,18 +220,82 @@ a {
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--font2);
-    border-top: 1px solid var(--font2);
+    justify-content: flex-start;
     padding: 0 10px;
 }
 
+.Coinrow:hover {
+    background-color: var(--bg1);
+}
+
+.Coinrow.top {
+    background-color: var(--accent);
+    color: var(--font);
+    width: 25vw;
+    position: sticky;
+    top: 0;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: forestgreen;
+}
+
+.Coinrow div {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 10px;
+}
+
+
 .Coinrow img {
     height: 30px;
+    margin-right: 5px;
 }
 
 .Graph {
-    width: 800px;
+    width: 750px;
+    background-color: var(--bg3);
+    box-shadow: var(--shadow);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.GraphPlaceholder {
+    height: 450px;
+    width: 750px;
+    background-color: var(--bg3);
+    box-shadow: var(--shadow);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.GraphPlaceholder img {
+    margin: 10px;
+    height: 60px;
+    animation: load 3s infinite;
+}
+
+@keyframes load {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
 }
 
 .CoinInfo {
@@ -181,34 +303,57 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding:10px 0;
+    padding: 10px 0;
 }
 
-.FilterButton{
-    display: flex;
-}
-
-.ChartButton{
-    background-color: var(--accent);
-    color: var(--font);
-    width: 60px;
-    padding: 5px;
-    text-align: center;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 10px;
-    margin: 0 10px;
+.Coindata {
+    width: 50%;
 }
 
 .Coinname {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.FilterButton {
+    display: flex;
+    width: 240px;
+}
+
+.ChartButton {
+    width: 33%;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.ChartButton:nth-child(1) {
+    border-radius: 5px 0 0 5px;
+}
+
+.ChartButton:nth-child(3) {
+    border-radius: 0 5px 5px 0;
+}
+
+.accent {
+    color: var(--font);
+    background-color: var(--accent);
+}
+
+.Coindata {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.Coinname img {
-    margin-right: 20px;
+.Coindata img {
+    margin-right: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -230,6 +375,64 @@ a {
     }
 }
 
+@media only screen and (max-width: 1200px) {
+    .List {
+        height: 400px;
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .Coinrow.top {
+        width: 100%;
+    }
+
+    .Graph {
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+
+.blob {
+    background-image: linear-gradient(120deg, #34e0f0 0%, #b400ff 100%);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    right: 120px;
+    top: 200px;
+    z-index: -1;
+    animation: move 8s linear infinite;
+    outline: 1px solid transparent;
+}
+
+@keyframes move {
+    0%, 100% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+
+    34% {
+        border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+        transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+    }
+
+    50% {
+        opacity: .89;
+        transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+
+    67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+        transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .blob {
+        right: 20vw;
+    }
+}
+
 .Footer {
     position: fixed;
     background: var(--accent);
@@ -238,4 +441,9 @@ a {
     bottom: 0;
     text-align: center;
     padding: 10px;
+}
+
+.Footer a {
+    text-decoration: underline;
+    cursor: pointer;
 }

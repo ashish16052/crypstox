@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 const Nav = (props) => {
 
   var username = "";
+  var userpic = "";
   if (localStorage.getItem("user")) {
     username = JSON.parse(localStorage.getItem("user")).name;
+    userpic = JSON.parse(localStorage.getItem("user")).imageUrl;
   }
 
   return (
@@ -19,6 +21,7 @@ const Nav = (props) => {
         {
           props.isSigned ?
             <div className="Navuser">
+              <img className='avatar' src={userpic}></img>
               Hello {username}
               <Logout setSigned={props.setSigned} />
             </div> :

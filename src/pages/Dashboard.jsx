@@ -21,8 +21,8 @@ const Dashboard = () => {
 
   return (
     <div className='Dashboard'>
-      <List />
       <Graph coin={coin} />
+      <List />
     </div>
   );
 }

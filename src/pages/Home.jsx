@@ -9,13 +9,14 @@ const Home = (props) => {
   return (
     <div className='Home'>
       <img src={illustration} className="illustration" />
+      <div class="blob"></div>
       <div className='content'>
-        <h1>Best Platform for Tracking Crypto and Stocks</h1>
-        <p>View the latest prices and charts of top cryptocurrencies and Stocks all at one </p>
+        <h1>Best Platform for Tracking Crypto Trends and Price</h1>
+        <p>View the latest prices and charts of top cryptocurrencies at one place </p>
         {
           props.isSigned ?
             <Link to="/dashboard">
-              <Button text="Dashboard" />
+              <Button text="Dashboard"/>
             </Link> :
             <Login setSigned={props.setSigned} />
         }
