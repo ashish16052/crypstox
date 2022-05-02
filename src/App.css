@@ -145,7 +145,7 @@ a {
 
 .Home .content h1 {
     transform: translateY(50px);
-    opacity: 0;
+    opacity: 1;
     animation: fade-up 2s ease-in-out;
     animation-fill-mode: forwards;
 }

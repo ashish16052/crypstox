@@ -9,7 +9,7 @@ Chart.register(...registerables);
 const Graph = ({ coin }) => {
 
     const [chartData, setChart] = useState();
-    const [days, setTime] = useState(7);
+    const [days, setTime] = useState(1);
     const [priceColor, setColor] = useState();
 
     const [filter1Color, setColor1] = useState("ChartButton accent");
